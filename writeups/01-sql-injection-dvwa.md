@@ -133,7 +133,7 @@ hashcat -m 0 -a 0 solo_hashes.txt /usr/share/wordlists/rockyou.txt
 - `-a 0` → ataque por diccionario
 - `rockyou.txt` → diccionario de contraseñas filtradas reales
 
-Resultado: **4/4 hashes crackeados en menos de un segundo**, a ~2.140 kH/s (CPU de la Pi 5, backend PoCL/OpenCL):
+Resultado: **4/4 hashes crackeados en menos de un segundo**, a ~2.100 kH/s (CPU de la Pi 5, backend PoCL/OpenCL):
 
 ```
 5f4dcc3b5aa765d61d8327deb882cf99:password
@@ -144,7 +144,7 @@ e99a18c428cb38d5f260853678922e03:abc123
 Status...........: Cracked
 Hash.Mode........: 0 (MD5)
 Recovered........: 4/4 (100.00%) Digests
-Speed.#1.........: 2140.3 kH/s
+Speed.#1.........: 2098.9 kH/s
 ```
 
 Para ver los resultados ya crackeados en cualquier momento:
